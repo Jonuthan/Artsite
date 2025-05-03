@@ -1,0 +1,55 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Figurescapes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Figurescapes</h1>
+  <p>Explore each painting up close 
+  — tap an image to enlarge.</p>
+
+  <div class="gallery">
+    <a href="images/2.jpg"><img src="images/2.jpg" alt="Art 1"></a>
+    <a href="images/16.jpg"><img src="images/16.jpg" alt="Art 2"></a>
+    <!-- Add more artworks here -->
+  </div>
+
+  <footer>
+    <p>Contact: JONATHANMICHAELCALDWELL@GMAIL>COM</p>
+  </footer>
+  <div id="lightbox" class="lightbox hidden">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.close');
+
+  document.querySelectorAll('.gallery a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      lightboxImg.src = link.href;
+      lightbox.classList.remove('hidden');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.add('hidden');
+    lightboxImg.src = '';
+  });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      lightbox.classList.add('hidden');
+      lightboxImg.src = '';
+    }
+  });
+</script>
+</body>
+</html>
