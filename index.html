@@ -1,68 +1,43 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Figurescapes</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>jonuthan — art & writing</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .entry-links {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 400px;
+      margin: 5rem auto;
+      text-align: center;
+    }
+
+    .entry-links a {
+      display: block;
+      padding: 1.5rem;
+      background: #222;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      transition: background 0.2s;
+    }
+
+    .entry-links a:hover {
+      background: #444;
+    }
+  </style>
 </head>
 <body>
-  <h1>Figurescapes</h1>
-  <p>Explore each painting up close 
-  — tap an image to enlarge.</p>
+  <h1 style="text-align: center; margin-top: 2rem;">jonuthan</h1>
+  <p style="text-align: center;">art & writing</p>
 
-  <div class="gallery">
-    <a href="images/2.jpg"><img src="images/2.jpg" alt="Art 1"></a>
-    <a href="images/16.jpg"><img src="images/16.jpg" alt="Art 2"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+1" alt="Coming Soon 1"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+2" alt="Coming Soon 2"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+3" alt="Coming Soon 3"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+4" alt="Coming Soon 4"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+5" alt="Coming Soon 5"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+6" alt="Coming Soon 6"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+7" alt="Coming Soon 7"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+8" alt="Coming Soon 8"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+9" alt="Coming Soon 9"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+10" alt="Coming Soon 10"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+11" alt="Coming Soon 11"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+12" alt="Coming Soon 12"></a>
-  <a href="#"><img src="https://via.placeholder.com/400x400?text=Coming+Soon+13" alt="Coming Soon 13"></a>
-</div>
+  <div class="entry-links">
+    <a href="paintings.html">🖼 Paintings</a>
+    <a href="essays.html">📝 Writings</a>
   </div>
-
-  <footer>
-    <p>Contact: JONATHANMICHAELCALDWELL@GMAIL>COM</p>
-  </footer>
-  <div id="lightbox" class="lightbox hidden">
-  <span class="close">&times;</span>
-  <img id="lightbox-img" src="" alt="">
-</div>
-
-<script>
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const closeBtn = document.querySelector('.close');
-
-  document.querySelectorAll('.gallery a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      lightboxImg.src = link.href;
-      lightbox.classList.remove('hidden');
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    lightbox.classList.add('hidden');
-    lightboxImg.src = '';
-  });
-
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) {
-      lightbox.classList.add('hidden');
-      lightboxImg.src = '';
-    }
-  });
-</script>
 </body>
 </html>
