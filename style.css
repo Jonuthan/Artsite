@@ -21,7 +21,7 @@ p {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: 1fr; /* Only one column now */
   gap: 1rem;
   margin-bottom: 2rem;
 }
